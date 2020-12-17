@@ -4,6 +4,7 @@ import { withPrefix } from 'gatsby'
 
 import cookie from 'cookie'
 import styled from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 import useSiteMetadata from './SiteMetadata'
 
 import Footer from '../components/Footer'
@@ -12,8 +13,8 @@ import ThemeButton from '../components/ThemeButton'
 
 import './all.scss'
 
-// Site theme settings
-const theme = {
+// Site palette settings
+const palette = {
   white: '#ffffff',
   black: '#000000',
   silver: '#eeeeee',
@@ -21,13 +22,27 @@ const theme = {
   greyDark: '#222222',
 
   red: '#d72323',
-  redPale: '#f02626',
-  redDark: '#bd1e1e',
+  redPale: '#ff6666',
+  redDark: '#990000',
 
   fontBody: 'Work Sans',
   fontHeading: 'Exo',
   fontSecondary: 'Signika',
 };
+
+const StyledLayout = styled.div`
+  transition: .3s;
+
+  &.light {
+    color: ${palette.black};
+    background: ${palette.white};
+  }
+
+  &.dark {
+    color: ${palette.white};
+    background: ${palette.greyDark};
+  }
+`
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -57,7 +72,7 @@ const TemplateWrapper = ({ children }) => {
   }
 
   return (
-    <div>
+    <StyledLayout className={`${theme}`}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -100,7 +115,7 @@ const TemplateWrapper = ({ children }) => {
       <Navbar theme={theme} />
       <div>{children}</div>
       <Footer />
-    </div>
+    </StyledLayout>
   )
 }
 
