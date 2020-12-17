@@ -1,5 +1,36 @@
 @import "~bulma/sass/utilities/initial-variables";
 
+@font-face {
+  font-family: 'Work Sans';
+  font-style: normal;
+  src: url('../../static/fonts/WorkSans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: italic, oblique;
+  src: url('../../static/fonts/WorkSans-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  src: url('../../static/fonts/Exo2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: italic, oblique;
+  src: url('../../static/fonts/Exo2-Italic.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Signika';
+  font-style: normal;
+  src: url('../../static/fonts/Signika.ttf') format('truetype');
+}
 
 // Config vars
 // Kaldi logo brand color: #FD461E
@@ -12,6 +43,14 @@ $primary: $pixel-red;
 $primary-invert: $pixel-red-invert;
 $body-color: #111;
 $black: #000;
+
+html {
+  font-family: 'Work Sans', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .title, .subtitle, .heading, .subheading {
+  font-family: 'Signika', Verdana, sans-serif;
+}
 
 .navbar .navbar-menu {
   box-shadow:none !important;
