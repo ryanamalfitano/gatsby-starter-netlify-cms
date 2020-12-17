@@ -1,10 +1,14 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import { withPrefix } from 'gatsby'
+
+import cookie from 'cookie'
+import styled from 'styled-components'
+import useSiteMetadata from './SiteMetadata'
+
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-
-import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import ThemeButton from '../components/ThemeButton'
 
 import './all.scss'
 
@@ -27,6 +31,31 @@ const theme = {
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
+
+  // Set theme to "dark" by default.
+  let theme = "dark";
+  let themeIsLight = false;
+
+  // Grab cookies.
+  var cookies = cookie.parse(document.cookie);
+
+  // If we can find the 'theme' cookie, set the theme to the cookie value.
+  if (typeof(cookies.theme) !== "undefined") {
+    theme = cookies.theme;
+    if (theme === "dark") { themeIsLight = false; }
+                     else { themeIsLight = true; }
+  }
+
+  // Function to handle theme changes coming from ThemeButton.js.
+  function handleThemeChange(val) {
+    theme = val;
+
+    // Set theme cookie with no expiry.
+    document.cookie = "theme=" + val + ";path=/";
+
+    window.location.reload();
+  }
+
   return (
     <div>
       <Helmet>
@@ -67,11 +96,18 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <ThemeButton onThemeChange={handleThemeChange} currentTheme={themeIsLight} />
+      <Navbar theme={theme} />
       <div>{children}</div>
       <Footer />
     </div>
   )
 }
 
-export default TemplateWrapper
+const WrappedWithThemeProvider = ({ children, pageType }) => (
+  <ThemeProvider theme={theme}>
+    <TemplateWrapper children={children} pageType={pageType} />
+  </ThemeProvider>
+);
+
+export default WrappedWithThemeProvider;
