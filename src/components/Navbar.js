@@ -1,7 +1,66 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
+import styled from 'styled-components'
+
+const StyledNavbar = styled.nav`
+  &.light {
+    box-shadow: 0px 0px 7px ${props => props.palette.greyDark};
+    
+    .navbar-item {
+      color: ${props => props.palette.greyDark};
+
+      &:hover { color: ${props => props.palette.red}; }
+    }
+  }
+
+  &.dark {
+    color: ${props => props.palette.white};
+    background: ${props => props.palette.black};
+    box-shadow: 0px 2px 5px ${props => props.palette.black};
+
+    .navbar-item {
+      color: ${props => props.palette.white};
+
+      &:hover { color: ${props => props.palette.redPale}; }
+    }
+  }
+
+  .container {
+    .navbar-menu {
+      justify-content: center;
+
+      .navbar-start,
+      .navbar-end {
+        flex-basis: 45%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .navbar-item {
+        transition: .1s;
+      }
+      
+      .navbar-item.logo {
+        flex-basis: 9%;
+
+        img {
+          width: 88px;
+          margin: auto;
+        }
+      }
+
+      .navbar-start { justify-content: flex-end; }
+      .navbar-end { justify-content: flex-start; }
+
+      .navbar-post {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+      }
+    }
+  }
+`
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -34,16 +93,13 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav
-        className="navbar is-transparent"
+      <StyledNavbar
+        className={`navbar is-transparent ${this.props.theme}`}
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -60,40 +116,25 @@ const Navbar = class extends React.Component {
           </div>
           <div
             id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
+            className={`navbar-menu ${this.state.navBarActiveClass} ${this.state.navBarThemeClass}`}
           >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
+            <div className="navbar-start">
+              <Link className="navbar-item" to="/">        Home    </Link>
+              <Link className="navbar-item" to="/about-us">About Us</Link>
+              <Link className="navbar-item" to="/contact"> Contact </Link>
             </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
+            <Link className="navbar-item logo" title="Logo" to="/">
+              <img src={logo} alt="Pixel By Pixel Studios" />
+            </Link>
+            <div className="navbar-end">
+              <Link className="navbar-item" to="/games/marbles-on-stream">Marbles On Stream</Link>
+            </div>
+            <div className="navbar-post">
+              <Link className="navbar-item" to="/games/marbles-on-stream">Log In</Link>
             </div>
           </div>
         </div>
-      </nav>
+      </StyledNavbar>
     )
   }
 }
