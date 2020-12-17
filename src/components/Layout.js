@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-import './all.sass'
+import './all.scss'
 
 // Site theme settings
 const theme = {
