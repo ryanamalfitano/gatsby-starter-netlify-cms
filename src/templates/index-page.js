@@ -18,6 +18,15 @@ const StyledMasthead = styled.div`
   }
 `
 
+const StyledContent = styled.section`
+  
+  .container {
+    .mainPitch {
+      .title, .subtitle { color: inherit; }
+    }
+  }
+`
+
 export const IndexPageTemplate = ({
   image,
   title,
@@ -37,7 +46,7 @@ export const IndexPageTemplate = ({
       </div>
       <div className="column is-6 stream full-width-image margin-top-0" style={{backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`}}></div>
     </StyledMasthead>
-    <section className="section">
+    <StyledContent>
       <div className="container">
         <section className="mainPitch">
           <h1 className="title">{mainpitch.title}</h1>
@@ -69,7 +78,7 @@ export const IndexPageTemplate = ({
           </div>
         </section>
       </div>
-    </section>
+    </StyledContent>
   </div>
 )
 
