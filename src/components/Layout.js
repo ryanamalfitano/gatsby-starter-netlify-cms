@@ -2,9 +2,28 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
-import './all.sass'
+
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+
+import './all.sass'
+
+// Site theme settings
+const theme = {
+  white: '#ffffff',
+  black: '#000000',
+  silver: '#eeeeee',
+  greyPale: '#3a4750',
+  greyDark: '#222222',
+
+  red: '#d72323',
+  redPale: '#f02626',
+  redDark: '#bd1e1e',
+
+  fontBody: 'Work Sans',
+  fontHeading: 'Exo',
+  fontSecondary: 'Signika',
+};
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
