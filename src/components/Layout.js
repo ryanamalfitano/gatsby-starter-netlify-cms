@@ -44,11 +44,21 @@ const StyledLayout = styled.div`
   &.light {
     color: ${theme.black};
     background: ${theme.white};
+
+    form input, form textarea {
+      background: ${theme.silver};
+      ::placeholder { color: ${theme.greyPale}; }
+    }
   }
 
   &.dark {
     color: ${theme.white};
     background: ${theme.greyDark};
+
+    form input, form textarea {
+      background: ${theme.white};
+      ::placeholder { color: ${theme.greyPale}; }
+    }
   }
 `
 
