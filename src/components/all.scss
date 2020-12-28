@@ -48,6 +48,18 @@ $black: #000;
 html, body, div#___gatsby, div#gatsby-focus-wrapper {
   min-height: 100vh;
 }
+
+// Override hard-coded colours with theme colours.
+.button.is-link {
+  background-color: $primary !important;
+}
+
+// Override hard-coded text colour settings so lighting changes actually work.
+.content h1, .content h2, .content h3, .content h4,
+.label {
+  color: inherit !important;
+}
+
 html {
   font-family: 'Work Sans', Helvetica, Arial, sans-serif;
 }
