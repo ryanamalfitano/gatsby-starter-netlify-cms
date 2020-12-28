@@ -13,8 +13,8 @@ import ThemeButton from '../components/ThemeButton'
 
 import './all.scss'
 
-// Site palette settings
-const palette = {
+// Site theme settings
+const theme = {
   white: '#ffffff',
   black: '#000000',
   silver: '#eeeeee',
@@ -28,51 +28,55 @@ const palette = {
   fontBody: 'Work Sans',
   fontHeading: 'Exo',
   fontSecondary: 'Signika',
+
+  lighting: 'light',
 };
 
 const StyledLayout = styled.div`
   transition: .3s;
 
   &.light {
-    color: ${palette.black};
-    background: ${palette.white};
+    color: ${theme.black};
+    background: ${theme.white};
   }
 
   &.dark {
-    color: ${palette.white};
-    background: ${palette.greyDark};
+    color: ${theme.white};
+    background: ${theme.greyDark};
   }
 `
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
 
-  // Set theme to "dark" by default.
-  let theme = "dark";
-  let themeIsLight = false;
+  // Set lighting bool based on the theme lighting.
+  let lightingIsDark = false;
+  if (theme.lighting === "dark") {
+    lightingIsDark = true;
+  }
 
   // Grab cookies.
   var cookies = cookie.parse(document.cookie);
 
-  // If we can find the 'theme' cookie, set the theme to the cookie value.
-  if (typeof(cookies.theme) !== "undefined") {
-    theme = cookies.theme;
-    if (theme === "dark") { themeIsLight = false; }
-                     else { themeIsLight = true; }
+  // If we can find the 'lighting' cookie, set the lighting to the cookie value.
+  if (typeof(cookies.lighting) !== "undefined") {
+    theme.lighting = cookies.lighting;
+    if (theme.lighting === "dark") { lightingIsDark = false; }
+                     else { lightingIsDark = true; }
   }
 
   // Function to handle theme changes coming from ThemeButton.js.
   function handleThemeChange(val) {
-    theme = val;
+    theme.lighting = val;
 
     // Set theme cookie with no expiry.
-    document.cookie = "theme=" + val + ";path=/";
+    document.cookie = "lighting=" + val + ";path=/";
 
     window.location.reload();
   }
 
   return (
-    <StyledLayout className={`${theme}`}>
+    <StyledLayout className={`${theme.lighting}`}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -111,8 +115,8 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <ThemeButton onThemeChange={handleThemeChange} currentTheme={themeIsLight} />
-      <Navbar theme={theme} />
+      <ThemeButton onThemeChange={handleThemeChange} currentTheme={lightingIsDark} />
+      <Navbar lighting={theme.lighting} />
       <div>{children}</div>
       <Footer />
     </StyledLayout>
