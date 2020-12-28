@@ -9,102 +9,133 @@ import twitter from '../img/social/twitter.svg'
 
 const StyledFooter = styled.footer`
   margin-top: auto;
+  
+  div.social {
+    img { width: 30px; height: 30px; }
+    .row {
+      margin: 15px 0;
+      text-align: right;
+    }
+  }
+
+  .copyright {
+    padding: 10px 0;
+  }
+
+  .navbar-item {
+    transition: .1s;
+    &:hover { background-color: initial; }
+  }
+
+  &.light {
+    box-shadow: 0px 0px 7px ${props => props.theme.greyDark};
+    
+    .navbar-item {
+      color: ${props => props.theme.greyDark};
+      
+      &:hover { color: ${props => props.theme.red} !important; }
+    }
+  }
+  
+  &.dark {
+    color: ${props => props.theme.white};
+    background: ${props => props.theme.black};
+    box-shadow: 0px 2px 5px ${props => props.theme.black};
+
+    .navbar-item {
+      color: ${props => props.theme.white};
+
+      &:hover { color: ${props => props.theme.redPale} !important; }
+    }
+  }
 `
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
+      <StyledFooter className={`footer ${this.props.lighting}`}>
         <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
+          <div className="container">
             <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
+              <div className="column is-3">
                 <section className="menu">
                   <ul className="menu-list">
                     <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
+                      <Link className="navbar-item" to="/">        Home    </Link>
                     </li>
+                {/*<li>
+                      <Link className="navbar-item" to="/about-us">About Us</Link>
+                    </li>*/}
                     <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
+                      <Link className="navbar-item" to="/contact"> Contact </Link>
                     </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
+                 {/*<li>
+                      <Link className="navbar-item" to="/log-in">Log In</Link>
+                    </li>*/}
                   </ul>
                 </section>
               </div>
-              <div className="column is-4">
+              <div className="column is-3">
                 <section>
                   <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
+                  <li>
+                      <Link className="navbar-item" to="/games/marbles-on-stream">Marbles On Stream</Link>
                     </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
+                 {/*<li>
+                      <Link className="navbar-item" to="/games/resurgence">Resurgence</Link>
+                    </li>*/}
                   </ul>
                 </section>
               </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
+              <div className="column is-6 social">
+                <div className="row is-6">
+                  <a title="discord" href="https://discord.com/invite/pixelbypixelstudios">
+                    <img
+                      src={facebook}
+                      alt="Discord"
+                    />
+                  </a>
+                  <a title="facebook" href="https://www.facebook.com/PixelbyPixelStudios">
+                    <img
+                      src={facebook}
+                      alt="Facebook"
+                    />
+                  </a>
+                  <a title="twitter" href="https://twitter.com/PixelbyPixelStu">
+                    <img
+                      src={twitter}
+                      alt="Twitter"
+                    />
+                  </a>
+                </div>
+                <div className="row is-6">
+                  <a title="youtube" href="https://www.youtube.com/c/PixelbyPixelStudios">
+                    <img
+                      src={facebook}
+                      alt="YouTube"
+                    />
+                  </a>
+                  <a title="instagram" href="https://www.instagram.com/pixelbypixelstu/">
+                    <img
+                      src={instagram}
+                      alt="Instagram"
+                    />
+                  </a>
+                  <a title="linkedin" href="https://www.linkedin.com/company/16232821">
+                    <img
+                      src={facebook}
+                      alt="LinkedIn"
+                    />
+                  </a>
+                </div>
               </div>
+            </div>
+            <div className="copyright">
+              <p>&copy;Pixel By Pixel Studios Inc., 2020</p>
             </div>
           </div>
         </div>
-      </footer>
+      </StyledFooter>
     )
   }
 }
