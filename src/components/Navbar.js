@@ -5,24 +5,24 @@ import styled from 'styled-components'
 
 const StyledNavbar = styled.nav`
   &.light {
-    box-shadow: 0px 0px 7px ${props => props.palette.greyDark};
+    box-shadow: 0px 0px 7px ${props => props.theme.greyDark};
     
     .navbar-item {
-      color: ${props => props.palette.greyDark};
+      color: ${props => props.theme.greyDark};
 
-      &:hover { color: ${props => props.palette.red}; }
+      &:hover { color: ${props => props.theme.red}; }
     }
   }
 
   &.dark {
-    color: ${props => props.palette.white};
-    background: ${props => props.palette.black};
-    box-shadow: 0px 2px 5px ${props => props.palette.black};
+    color: ${props => props.theme.white};
+    background: ${props => props.theme.black};
+    box-shadow: 0px 2px 5px ${props => props.theme.black};
 
     .navbar-item {
-      color: ${props => props.palette.white};
+      color: ${props => props.theme.white};
 
-      &:hover { color: ${props => props.palette.redPale}; }
+      &:hover { color: ${props => props.theme.redPale}; }
     }
   }
 
@@ -94,7 +94,7 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <StyledNavbar
-        className={`navbar is-transparent ${this.props.theme}`}
+        className={`navbar is-transparent ${this.props.lighting}`}
         role="navigation"
         aria-label="main-navigation"
       >
@@ -120,7 +120,7 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-start">
               <Link className="navbar-item" to="/">        Home    </Link>
-              <Link className="navbar-item" to="/about-us">About Us</Link>
+           {/*<Link className="navbar-item" to="/about-us">About Us</Link>*/}
               <Link className="navbar-item" to="/contact"> Contact </Link>
             </div>
             <Link className="navbar-item logo" title="Logo" to="/">
@@ -128,9 +128,10 @@ const Navbar = class extends React.Component {
             </Link>
             <div className="navbar-end">
               <Link className="navbar-item" to="/games/marbles-on-stream">Marbles On Stream</Link>
+           {/*<Link className="navbar-item" to="/games/resurgence">Resurgence</Link>*/}
             </div>
             <div className="navbar-post">
-              <Link className="navbar-item" to="/games/marbles-on-stream">Log In</Link>
+           {/*<Link className="navbar-item" to="/log-in">Log In</Link>*/}
             </div>
           </div>
         </div>
