@@ -18,12 +18,15 @@ const theme = {
   white: '#ffffff',
   black: '#000000',
   silver: '#eeeeee',
-  greyPale: '#3a4750',
+  grey: '#3a4750',
+  greyPale: '#888888',
   greyDark: '#222222',
 
   red: '#d72323',
   redPale: '#ff6666',
   redDark: '#990000',
+
+  purple: '#a970ff',
 
   fontBody: 'Work Sans',
   fontHeading: 'Exo',
