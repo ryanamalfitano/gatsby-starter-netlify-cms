@@ -6,14 +6,14 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 
 const StyledMasthead = styled.div`
-  
-  .stream {
-    background-image: url();
-    background-position: 'top left';
-    background-attachment: 'fixed';
+  #titles {
+    margin: auto;
+    text-align: right;
+
+    h3 { font-style: italic; }
   }
 
-  .titles {
+  #stream {
 
   }
 `
@@ -22,7 +22,38 @@ const StyledContent = styled.section`
   
   .container {
     .mainPitch {
+      text-align: center;
+
+      .subtitle {
+        max-width: 30rem;
+        margin: auto;
+      }
+
       .title, .subtitle { color: inherit; }
+    }
+
+    .downloads {
+      margin: 20px auto;
+      justify-content: center;
+
+      h2 {
+        
+      }
+
+      .streamer {
+        text-align: right;
+        box-shadow: inset -6px 6px 5px ${props => props.theme.purple};
+        border-right: 1px solid ${props => props.theme.black};
+
+        h2 { color: ${props => props.theme.purple}; }
+      }
+
+      .viewer {
+        box-shadow: inset 6px 6px 5px ${props => props.theme.red};
+        border-left: 1px solid ${props => props.theme.black};
+
+        h2 { color: ${props => props.theme.red}; }
+      }
     }
   }
 `
@@ -36,21 +67,38 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <StyledMasthead className="columns">
-      <div className="column is-6 titles">
+      <div id="titles" className="column is-6">
         <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
           {title}
         </h1>
-        <h3 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
+        <h3 className="is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
           {subtitle}
         </h3>
       </div>
-      <div className="column is-6 stream full-width-image margin-top-0" style={{backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`}}></div>
+      <div id="stream" className="column is-6 full-width-image margin-top-0"></div>
     </StyledMasthead>
     <StyledContent>
       <div className="container">
         <section className="mainPitch">
           <h1 className="title">{mainpitch.title}</h1>
           <p className="subtitle">{mainpitch.description}</p>
+        </section>
+        <section className="downloads columns">
+          <div className="streamer column is-3">
+            <h2>For Streamers</h2>
+            <a href="https://store.steampowered.com/app/1170970/Marbles_on_Stream/" target="_blank" rel="noreferrer noopener">
+              <img src="" alt="Download on Steam" />
+            </a>
+          </div>
+          <div className="viewer column is-3">
+            <h2>For Viewers</h2>
+            <a href="https://apps.apple.com/de/app/marbles-on-stream-mobile/id1443250176" target="_blank" rel="noreferrer noopener">
+              <img src="" alt="Download on App Store" />
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.pixelbypixel.mosmobile" target="_blank" rel="noreferrer noopener">
+              <img src="" alt="Download on Google Play" />
+            </a>
+          </div>
         </section>
         <section className="sellingPoints">
           <h3 className="has-text-weight-semibold is-size-2">
@@ -72,11 +120,11 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </section>
-        <section className="streamsCarousel full-width-image-container">
+     {/*<section className="streamsCarousel full-width-image-container">
           <div className="full-width-image" style={{backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`}}>
             <h1 style={{color: '#ffffff', fontSize: '36pt'}}>STREAMS LIST</h1>
           </div>
-        </section>
+        </section>*/}
       </div>
     </StyledContent>
   </div>
