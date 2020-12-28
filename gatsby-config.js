@@ -59,6 +59,13 @@ module.exports = {
         ],
       },
     },
+    /*{
+      resolve: `gatsby-source-twitch`,
+      options: {
+        userID: '<<Twitch UserID eg. 6058227 >>',
+        clientID: '<< Add your Twitch client_id here>>'
+      },
+    },*/
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
