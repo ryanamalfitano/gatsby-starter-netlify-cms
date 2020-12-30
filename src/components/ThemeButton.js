@@ -12,7 +12,7 @@ const ThemeButton = class extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      themeIsLight: props.currentTheme,
+      lightingIsDark: props.currentTheme,
     }
   }
 
@@ -20,14 +20,14 @@ const ThemeButton = class extends React.Component {
     // Toggle the theme boolean in the state (light = true, dark = false).
     this.setState(
       {
-        themeIsLight: !this.state.themeIsLight,
+        lightingIsDark: !this.state.lightingIsDark,
       },
       // After the state has been updated,
       () => {
         // set the prop accordingly for the Layout to pull.
-        this.state.themeIsLight
-          ? this.props.onThemeChange('light')
-          : this.props.onThemeChange('dark')
+        this.state.lightingIsDark
+          ? this.props.onThemeChange('dark')
+          : this.props.onThemeChange('light')
       }
     )
   }

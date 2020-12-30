@@ -66,21 +66,21 @@ const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
 
   // Set lighting bool based on the theme lighting.
-  let lightingIsDark = false;
+  var lightingIsDark = false;
   if (theme.lighting === "dark") {
     lightingIsDark = true;
   }
 
   // Only do this if the document is loaded.
-  if (typeof document !== "undefined") {
+  if (typeof(document) !== "undefined") {
     // Grab cookies.
     var cookies = cookie.parse(document.cookie);
 
     // If we can find the 'lighting' cookie, set the lighting to the cookie value.
     if (typeof(cookies.lighting) !== "undefined") {
       theme.lighting = cookies.lighting;
-      if (theme.lighting === "dark") { lightingIsDark = false; }
-                      else { lightingIsDark = true; }
+      if (theme.lighting === "dark") { lightingIsDark = true; }
+                      else { lightingIsDark = false; }
     }
   }
 
@@ -89,8 +89,7 @@ const TemplateWrapper = ({ children }) => {
     theme.lighting = val;
 
     // Set theme cookie with no expiry.
-    document.cookie = "lighting=" + val + ";path=/";
-
+    document.cookie = "lighting=" + val + ";path=/;SameSite=Strict;";
     window.location.reload();
   }
 
