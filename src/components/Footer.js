@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import logo from '../img/logo.svg'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
@@ -89,19 +88,22 @@ const Footer = class extends React.Component {
               </div>
               <div className="column is-6 social">
                 <div className="row is-6">
-                  <a title="discord" href="https://discord.com/invite/pixelbypixelstudios">
+                  <a target="_blank" rel="noopener noreferrer"
+                     title="discord" href="https://discord.com/invite/pixelbypixelstudios">
                     <img
                       src={facebook}
                       alt="Discord"
                     />
                   </a>
-                  <a title="facebook" href="https://www.facebook.com/PixelbyPixelStudios">
+                  <a target="_blank" rel="noopener noreferrer"
+                     title="facebook" href="https://www.facebook.com/PixelbyPixelStudios">
                     <img
                       src={facebook}
                       alt="Facebook"
                     />
                   </a>
-                  <a title="twitter" href="https://twitter.com/PixelbyPixelStu">
+                  <a target="_blank" rel="noopener noreferrer"
+                     title="twitter" href="https://twitter.com/PixelbyPixelStu">
                     <img
                       src={twitter}
                       alt="Twitter"
@@ -109,19 +111,22 @@ const Footer = class extends React.Component {
                   </a>
                 </div>
                 <div className="row is-6">
-                  <a title="youtube" href="https://www.youtube.com/c/PixelbyPixelStudios">
+                  <a target="_blank" rel="noopener noreferrer"
+                     title="youtube" href="https://www.youtube.com/c/PixelbyPixelStudios">
                     <img
                       src={facebook}
                       alt="YouTube"
                     />
                   </a>
-                  <a title="instagram" href="https://www.instagram.com/pixelbypixelstu/">
+                  <a target="_blank" rel="noopener noreferrer"
+                     title="instagram" href="https://www.instagram.com/pixelbypixelstu/">
                     <img
                       src={instagram}
                       alt="Instagram"
                     />
                   </a>
-                  <a title="linkedin" href="https://www.linkedin.com/company/16232821">
+                  <a target="_blank" rel="noopener noreferrer"
+                     title="linkedin" href="https://www.linkedin.com/company/16232821">
                     <img
                       src={facebook}
                       alt="LinkedIn"
