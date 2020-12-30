@@ -8,17 +8,17 @@ title: Pixel By Pixel Studios
 
 <div id="titles" class="column is-6">
 
-<h1 class="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
+<h1 class="is-size-1">
 Pixel By Pixel Studios
 </h1>
 
-<h3 class="is-size-5-mobile is-size-5-tablet is-size-4-widescreen">
+<h3 class="is-size-5">
 Home of Stream Interactive Gaming
 </h3>
 
 </div>
 
-<div id="stream" class="column is-6 full-width-image margin-top-0">
+<div id="stream" class="column is-6 full-width-image">
 
 `twitchLive: mos_pachinko&parent=pixelbypixelstudios.netlify.app&parent=localhost`
 
@@ -26,27 +26,27 @@ Home of Stream Interactive Gaming
 
 </div>
 
-<div class="content">
+<div class="content container">
 
 <section class="mainPitch">
 
 <h1 class="title">Welcome to Our Site</h1>
 
-<p class="subtitle">Some body copy goes here, exploring the studio's goals, values, etc. Probably should also mention Marbles by name as the current flagship product</p>
+<p>Some body copy goes here, exploring the studio's goals, values, etc. Probably should also mention Marbles by name as the current flagship product</p>
 
 </section>
 
 <section class="downloads columns">
 
 <div class="streamer column is-3">
-<h2>For Streamers</h2>
+<h4>For Streamers</h4>
 <a href="https://store.steampowered.com/app/1170970/Marbles_on_Stream/" target="_blank" rel="noreferrer noopener">
 <img src="" alt="Download on Steam" />
 </a>
 </div>
 
 <div class="viewer column is-3">
-<h2>For Viewers</h2>
+<h4>For Viewers</h4>
 <a href="https://apps.apple.com/de/app/marbles-on-stream-mobile/id1443250176" target="_blank" rel="noreferrer noopener">
 <img src="" alt="Download on App Store" />
 </a>
