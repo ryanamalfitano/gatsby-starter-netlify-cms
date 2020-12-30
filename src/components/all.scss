@@ -55,6 +55,7 @@ html, body, div#___gatsby, div#gatsby-focus-wrapper {
 }
 
 // Override hard-coded text colour settings so lighting changes actually work.
+h1, h2, h3, h4, h5, h6, .title, .subtitle, .heading, .subheading,
 .content h1, .content h2, .content h3, .content h4,
 .label {
   color: inherit !important;
