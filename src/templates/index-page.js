@@ -7,22 +7,43 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
 const StyledHomePageContent = styled.section`
-  #titles {
-    margin: auto;
-    text-align: right;
+  .masthead {
+    align-items: stretch;
 
-    h3 { font-style: italic; }
-  }
+    .column { padding: 0; }
+    
+    #titles {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
 
-  #stream {
+      padding-right: 30px;
+      text-align: right;
 
+      background: ${props => props.theme.grey} center / cover no-repeat;
+
+      h3 {
+        margin-top: 0;
+        font-weight: normal;
+        font-style: italic;
+      }
+    }
+
+    #stream {
+      .embedVideo-container {
+        text-align: center;
+        background: black;
+      }
+    }
   }
 
   .container {
     .mainPitch {
+      margin-top: 50px;
       text-align: center;
 
-      .subtitle {
+      p {
         max-width: 30rem;
         margin: auto;
       }
@@ -31,11 +52,11 @@ const StyledHomePageContent = styled.section`
     }
 
     .downloads {
-      margin: 20px auto;
+      margin: 35px auto;
       justify-content: center;
 
-      h2 {
-        
+      h4 {
+        font-weight: normal;
       }
 
       .streamer {
@@ -44,7 +65,7 @@ const StyledHomePageContent = styled.section`
         border-top:   2px solid ${props => props.theme.black};
         border-right: 1px solid ${props => props.theme.black};
 
-        h2 { color: ${props => props.theme.purple}; }
+        h4 { color: ${props => props.theme.purple} !important; }
       }
 
       .viewer {
@@ -52,8 +73,13 @@ const StyledHomePageContent = styled.section`
         border-top:  2px solid ${props => props.theme.black};
         border-left: 1px solid ${props => props.theme.black};
 
-        h2 { color: ${props => props.theme.red}; }
+        h4 { color: ${props => props.theme.red} !important; }
       }
+    }
+
+    .sellingPoints {
+      margin: 100px auto 50px;
+      text-align: center;
     }
   }
 `
@@ -62,10 +88,8 @@ export const IndexPageTemplate = ({title, content, contentComponent}) => {
   const PageContent = contentComponent || Content
 
   return (
-  <StyledHomePageContent className="section">
-    <div className="container">
-      <PageContent className="content" content={content} />
-    </div>
+  <StyledHomePageContent>
+    <PageContent className="content" content={content} />
   </StyledHomePageContent>
   )
 }
