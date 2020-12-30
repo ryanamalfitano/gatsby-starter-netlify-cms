@@ -19,6 +19,7 @@ const StyledGameInfoSection = styled.section`
 
   hr {
     color: ${props => props.theme.red}
+    background-color: ${props => props.theme.red}
   }
 
   .selling-point {
