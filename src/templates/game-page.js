@@ -2,18 +2,57 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+
+import styled from 'styled-components'
 import Content, { HTMLContent } from '../components/Content'
+
+const StyledGameInfoSection = styled.section`
+  .title {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .embedVideo-container {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  hr {
+    color: ${props => props.theme.red}
+  }
+
+  .selling-point {
+    display: flex;
+    justify-content: space-evenly;
+
+    padding: 20px 0;
+    text-align: center;
+
+    > img { object-fit: contain; }
+
+    h2, p {
+      max-width: 25rem;
+      margin: 15px auto;
+    }
+
+    &:nth-of-type(even) {
+
+
+      .companion-img { float: right; }
+    }
+  }
+`
 
 export const GamePageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient">
+    <StyledGameInfoSection className="section section--gradient">
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+              <h2 className="title is-size-2 has-text-weight-bold">
                 {title}
               </h2>
               <PageContent className="content" content={content} />
@@ -21,7 +60,7 @@ export const GamePageTemplate = ({ title, content, contentComponent }) => {
           </div>
         </div>
       </div>
-    </section>
+    </StyledGameInfoSection>
   )
 }
 
