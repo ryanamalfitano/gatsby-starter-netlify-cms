@@ -43,6 +43,7 @@ const StyledContent = styled.section`
       .streamer {
         text-align: right;
         box-shadow: inset -6px 6px 5px ${props => props.theme.purple};
+        border-top:   2px solid ${props => props.theme.black};
         border-right: 1px solid ${props => props.theme.black};
 
         h2 { color: ${props => props.theme.purple}; }
@@ -50,6 +51,7 @@ const StyledContent = styled.section`
 
       .viewer {
         box-shadow: inset 6px 6px 5px ${props => props.theme.red};
+        border-top:  2px solid ${props => props.theme.black};
         border-left: 1px solid ${props => props.theme.black};
 
         h2 { color: ${props => props.theme.red}; }
