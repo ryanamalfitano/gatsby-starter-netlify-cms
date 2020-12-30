@@ -45,6 +45,8 @@ const StyledLayout = styled.div`
     color: ${theme.black};
     background: ${theme.white};
 
+    .masthead #titles { background-image: url(/img/ABMSBT1.jpg); }
+
     form input, form textarea {
       background: ${theme.silver};
       ::placeholder { color: ${theme.greyPale}; }
@@ -54,6 +56,8 @@ const StyledLayout = styled.div`
   &.dark {
     color: ${theme.white};
     background: ${theme.greyDark};
+
+    .masthead #titles { background-image: url(/img/17924.jpg); }
 
     form input, form textarea {
       background: ${theme.white};
