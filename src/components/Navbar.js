@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../img/logo.svg'
+import logo from '../../static/img/PBPLogo_White.webp'
 import styled from 'styled-components'
 
 const StyledNavbar = styled.nav`
@@ -18,6 +18,8 @@ const StyledNavbar = styled.nav`
       color: ${props => props.theme.greyDark};
 
       &:hover { color: ${props => props.theme.red}; }
+
+      &.logo img { filter: invert(100%); }
     }
   }
 
@@ -53,7 +55,13 @@ const StyledNavbar = styled.nav`
 
         img {
           width: 88px;
+          height: 88px;
+          padding: 4px;
+          max-height: unset;
+
           margin: auto;
+          border-radius: 10px;
+          background: ${props => props.theme.black};
         }
       }
 
