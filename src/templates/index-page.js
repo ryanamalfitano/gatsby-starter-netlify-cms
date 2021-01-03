@@ -31,6 +31,8 @@ const StyledHomePageContent = styled.section`
     }
 
     #stream {
+      p { display: none; }
+
       .embedVideo-container {
         text-align: center;
         background: black;
