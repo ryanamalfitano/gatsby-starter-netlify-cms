@@ -38,7 +38,9 @@ const theme = {
 const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
+
   min-height: 100vh;
+  padding-top: 75px;
   transition: .3s;
 
   &.light {

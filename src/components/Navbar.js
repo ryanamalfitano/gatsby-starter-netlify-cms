@@ -4,6 +4,13 @@ import logo from '../img/logo.svg'
 import styled from 'styled-components'
 
 const StyledNavbar = styled.nav`
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  max-height: 50px;
+  
   &.light {
     box-shadow: 0px 0px 7px ${props => props.theme.greyDark};
     
