@@ -12,6 +12,8 @@ const StyledGameInfoSection = styled.section`
     text-align: center;
   }
 
+  video { max-width: 100%; }
+  
   .embedVideo-container {
     margin-bottom: 35px;
     text-align: center;
