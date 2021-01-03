@@ -3,7 +3,6 @@ templateKey: 'game-page'
 path: /marbles-on-stream
 title: Marbles On Stream
 ---
-`youtube: https://www.youtube.com/watch?v=TEf2mCmyRlU`
 <!--`youtube: https://www.youtube.com/watch?v=TEf2mCmyRlU`-->
 
 <video controls><source src="/img/marbles-trailer.mp4" type="video/mp4"></video>
@@ -12,7 +11,7 @@ title: Marbles On Stream
 
 <section class="selling-point">
 
-<img alt="Marble Races" src="/img/coffee.png" />
+<img alt="Marble Races" src="/img/marbles-play.webp" />
 
 <div>
 
@@ -20,7 +19,7 @@ title: Marbles On Stream
 <p>Connect the game with your Twitch.tv chat and enjoy an interactive community experience.</p>
 
 <a href="https://store.steampowered.com/app/1170970/Marbles_on_Stream/" target="_blank" rel="noreferrer noopener">
-<img alt="Download on Steam" src="/img/apple-touch-icon.png" />
+<img alt="Download on Steam" src="/img/steam_download.webp" />
 </a>
 
 </div>
@@ -38,16 +37,16 @@ title: Marbles On Stream
 <p>Available for iOS and Android.</p>
 
 <a href="https://apps.apple.com/de/app/marbles-on-stream-mobile/id1443250176" target="_blank" rel="noreferrer noopener">
-<img alt="Download on App Store" src="/img/apple-touch-icon.png" />
+<img alt="Download on App Store" src="/img/ios_download.webp" />
 </a>
 
 <a href="https://play.google.com/store/apps/details?id=com.pixelbypixel.mosmobile" target="_blank" rel="noreferrer noopener">
-<img alt="Download on Google Play" src="/img/apple-touch-icon.png" />
+<img alt="Download on Google Play" src="/img/google_play_download.webp" />
 </a>
 
 </div>
 
-<img alt="Marble Customizer" src="/img/meeting-space.png" />
+<img alt="Marble Customizer" src="/img/marbles-customize.webp" />
 
 </section>
 
@@ -56,7 +55,7 @@ title: Marbles On Stream
 <section class="selling-point">
 
 <a href="https://discord.com/invite/pixelbypixelstudios" target="_blank" rel="noreferrer noopener">
-<img alt="Join Our Discord" src="/img/coffee-gear.png" />
+<img alt="Join Our Discord" src="/img/discord_pbp.webp" />
 </a>
 
 <div>
