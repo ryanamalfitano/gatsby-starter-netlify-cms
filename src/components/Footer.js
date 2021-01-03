@@ -2,18 +2,23 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-
 const StyledFooter = styled.footer`
   margin-top: auto;
   
   div.social {
-    img { width: 30px; height: 30px; }
+    
     .row {
       margin: 15px 0;
       text-align: right;
+
+      a {
+
+        img {
+          width: 40px;
+          height: 40px;
+          object-fit: cover;
+        }
+      }
     }
   }
 
@@ -28,6 +33,8 @@ const StyledFooter = styled.footer`
 
   &.light {
     box-shadow: 0px 0px 7px ${props => props.theme.greyDark};
+
+    div.social img { filter: invert(100%); }
     
     .navbar-item {
       color: ${props => props.theme.greyDark};
@@ -91,21 +98,21 @@ const Footer = class extends React.Component {
                   <a target="_blank" rel="noopener noreferrer"
                      title="discord" href="https://discord.com/invite/pixelbypixelstudios">
                     <img
-                      src={facebook}
+                      src="/img/icon-discord.webp"
                       alt="Discord"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="facebook" href="https://www.facebook.com/PixelbyPixelStudios">
                     <img
-                      src={facebook}
+                      src="/img/icon-facebook.webp"
                       alt="Facebook"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="twitter" href="https://twitter.com/PixelbyPixelStu">
                     <img
-                      src={twitter}
+                      src="/img/icon-twitter.webp"
                       alt="Twitter"
                     />
                   </a>
@@ -114,21 +121,21 @@ const Footer = class extends React.Component {
                   <a target="_blank" rel="noopener noreferrer"
                      title="youtube" href="https://www.youtube.com/c/PixelbyPixelStudios">
                     <img
-                      src={facebook}
+                      src="/img/icon-youtube.webp"
                       alt="YouTube"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="instagram" href="https://www.instagram.com/pixelbypixelstu/">
                     <img
-                      src={instagram}
+                      src="/img/icon-instagram.webp"
                       alt="Instagram"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="linkedin" href="https://www.linkedin.com/company/16232821">
                     <img
-                      src={facebook}
+                      src="/img/icon-linkedin.webp"
                       alt="LinkedIn"
                     />
                   </a>
