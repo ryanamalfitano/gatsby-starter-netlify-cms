@@ -5,7 +5,23 @@ const StyledThemeButton = styled.button`
   position: fixed;
   top: 8px;
   left: 8px;
+
+  padding: 4px 6px;
+
+  font-size: 0.65rem;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+
   z-index: 31;
+
+  &.light {
+    border: 1px solid ${props => props.theme.black};
+  }
+
+  &.dark {
+    border: 1px solid ${props => props.theme.white};
+  }
 `
 
 const ThemeButton = class extends React.Component {
@@ -33,9 +49,12 @@ const ThemeButton = class extends React.Component {
   }
 
   render() {
+    let lightingClass = "";
+    this.state.lightingIsDark ? lightingClass = "dark" : lightingClass = "light";
+
     return (
       <StyledThemeButton
-        className="navbar-item"
+        className={`navbar-item ${lightingClass}`}
         id="change-theme"
         onClick={() => this.toggleTheme()}
         onKeyDown={() => this.toggleTheme()}
