@@ -60,7 +60,7 @@ const ThemeButton = class extends React.Component {
   }
 
   render() {
-    let lightingClass = "";
+    let lightingClass;
     this.state.lightingIsDark ? lightingClass = "dark" : lightingClass = "light";
 
     return (
