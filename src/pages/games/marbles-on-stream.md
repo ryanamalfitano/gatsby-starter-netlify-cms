@@ -2,6 +2,8 @@
 templateKey: 'game-page'
 path: /marbles-on-stream
 title: Marbles On Stream
+logoLight: /img/logos/MarblesOnStream_BrandingRed.light.png
+logoDark:  /img/logos/MarblesOnStream_BrandingRed.dark.png
 ---
 <!--`youtube: https://www.youtube.com/watch?v=TEf2mCmyRlU`-->
 
