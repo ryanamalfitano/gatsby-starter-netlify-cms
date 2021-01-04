@@ -106,7 +106,7 @@ const IndexPage = ({ data }) => {
   const { markdownRemark: page } = data
 
   return (
-    <Layout>
+    <Layout pageType="home">
       <IndexPageTemplate
         contentComponent={HTMLContent}
         title={page.frontmatter.title}
