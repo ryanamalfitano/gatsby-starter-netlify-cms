@@ -23,6 +23,11 @@ const StyledNavbar = styled.nav`
       &.logo img {
         &.white { filter: invert(100%); }
         &.red { background: ${props => props.theme.white} !important; }
+
+        :not(.is-active) { border-bottom: 2px solid ${props => props.theme.greyPale} !important; }
+
+        &.white.is-active { border-bottom: 2px solid ${props => props.theme.black} !important; }
+        &.red.is-active { border-bottom: 2px solid ${props => props.theme.white} !important; }
       }
     }
   }
@@ -40,6 +45,36 @@ const StyledNavbar = styled.nav`
   }
 
   .container {
+    .navbar-brand {
+      display: none;
+
+      .navbar-item.logo {
+        position: relative;
+        flex-basis: 9%;
+
+        img {
+          position: absolute;
+          top: 0px; right: 0; bottom: 0; left: 0;
+
+          width: 88px;
+          height: 88px;
+          padding: 4px;
+          max-height: unset;
+
+          margin: 0 auto;
+          border-radius: 10px;
+          border-bottom: 2px solid ${props => props.theme.black};
+          background: ${props => props.theme.black};
+
+          transition: opacity 0.3s;
+
+          :hover { opacity: 0.0; }
+
+          &.white { z-index: 2; }
+        }
+      }
+    }
+
     .navbar-menu {
       justify-content: center;
 
@@ -77,6 +112,7 @@ const StyledNavbar = styled.nav`
 
           &.white { z-index: 2; }
 
+          :not(.is-active) { border-bottom: 2px solid ${props => props.theme.black}; }
         }
       }
 
@@ -87,6 +123,26 @@ const StyledNavbar = styled.nav`
         position: fixed;
         top: 8px;
         right: 8px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px), print {
+    .container {
+      .navbar-brand { display: block; }
+
+      .navbar-menu {
+        .navbar-item.logo { display: none; }
+      }
+    }
+
+    &.dark {
+      .navbar-burger { color: ${props => props.theme.white}; }
+
+      .navbar-menu {
+        background: ${props => props.theme.black};
+
+        a.navbar-item:hover { background: ${props => props.theme.black}; }
       }
     }
   }
@@ -130,6 +186,10 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
+            <Link className="navbar-item logo" title="Logo" to="/">
+              <img src={logo} className={`white ${this.state.navBarActiveClass}`}  alt="Pixel By Pixel Studios" />
+              <img src={logoRed} className={`red ${this.state.navBarActiveClass}`} alt="Pixel By Pixel Studios" />
+            </Link>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
