@@ -41,7 +41,7 @@ Home of Stream Interactive Gaming
 <div class="streamer column is-4">
 <h4>For Streamers</h4>
 <a href="https://store.steampowered.com/app/1170970/Marbles_on_Stream/" target="_blank" rel="noreferrer noopener">
-<img src="/img/steam_download.webp" alt="Download on Steam" />
+<img src="/img/steam_download_small.webp" alt="Download on Steam" />
 </a>
 </div>
 
