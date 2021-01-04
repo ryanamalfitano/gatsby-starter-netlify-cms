@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../../static/img/PBPLogo_White.webp'
+import logoRed from '../../static/img/PBPLogo_Red.webp'
 import styled from 'styled-components'
 
 const StyledNavbar = styled.nav`
@@ -19,7 +20,10 @@ const StyledNavbar = styled.nav`
 
       &:hover { color: ${props => props.theme.red}; }
 
-      &.logo img { filter: invert(100%); }
+      &.logo img {
+        &.white { filter: invert(100%); }
+        &.red { background: ${props => props.theme.white} !important; }
+      }
     }
   }
 
@@ -51,17 +55,28 @@ const StyledNavbar = styled.nav`
       }
       
       .navbar-item.logo {
+        position: relative;
         flex-basis: 9%;
 
         img {
+          position: absolute;
+          top: 0px; right: 0; bottom: 0; left: 0;
+
           width: 88px;
           height: 88px;
           padding: 4px;
           max-height: unset;
 
-          margin: auto;
+          margin: 0 auto;
           border-radius: 10px;
           background: ${props => props.theme.black};
+
+          transition: opacity 0.3s;
+
+          :hover { opacity: 0.0; }
+
+          &.white { z-index: 2; }
+
         }
       }
 
@@ -139,7 +154,8 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/contact"> Contact </Link>
             </div>
             <Link className="navbar-item logo" title="Logo" to="/">
-              <img src={logo} alt="Pixel By Pixel Studios" />
+              <img src={logo} className="white"  alt="Pixel By Pixel Studios" />
+              <img src={logoRed} className="red" alt="Pixel By Pixel Studios" />
             </Link>
             <div className="navbar-end">
               <Link className="navbar-item" to="/games/marbles-on-stream">Marbles On Stream</Link>
