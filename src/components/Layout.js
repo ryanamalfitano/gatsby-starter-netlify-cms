@@ -40,8 +40,10 @@ const StyledLayout = styled.div`
   flex-direction: column;
 
   min-height: 100vh;
-  padding-top: 75px;
   transition: .3s;
+
+  padding-top: 65px;
+  &.home { padding-top: 50px; }
 
   &.light {
     color: ${theme.black};
@@ -68,7 +70,7 @@ const StyledLayout = styled.div`
   }
 `
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, pageType }) => {
   const { title, description } = useSiteMetadata()
 
   // Set lighting bool based on the theme lighting.
@@ -100,7 +102,7 @@ const TemplateWrapper = ({ children }) => {
   }
 
   return (
-    <StyledLayout className={`${theme.lighting}`}>
+    <StyledLayout className={`${theme.lighting} ${pageType}`}>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
