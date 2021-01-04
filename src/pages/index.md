@@ -38,7 +38,7 @@ Home of Stream Interactive Gaming
 
 <section class="downloads columns">
 
-<div class="streamer column is-4">
+<div class="streamer column is-3">
 <h4>For Streamers</h4>
 <a href="https://store.steampowered.com/app/1170970/Marbles_on_Stream/" target="_blank" rel="noreferrer noopener">
 <img src="/img/steam_download_small.webp" alt="Download on Steam" />
@@ -65,17 +65,17 @@ Home of Stream Interactive Gaming
 
 <div class="column is-4">
 <img src="/img/home-main1.webp" alt="Provide a Fresh Experience for Viewers" />
-<p>Provide a Fresh Experience for Viewers</p>
+<h4>Provide a Fresh Experience for Viewers</h4>
 </div>
 
 <div class="column is-4">
 <img src="/img/home-main2.webp" alt="Increase Audience Engagement" />
-<p>Increase Audience Engagement</p>
+<h4>Increase Audience Engagement</h4>
 </div>
 
 <div class="column is-4">
 <img src="/img/home-main3.webp" alt="Be Part of an Awesome Community" />
-<p>Be Part of an Awesome Community</p>
+<h4>Be Part of an Awesome Community</h4>
 </div>
 
 </div>
