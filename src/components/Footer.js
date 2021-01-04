@@ -54,6 +54,13 @@ const StyledFooter = styled.footer`
       &:hover { color: ${props => props.theme.redPale} !important; }
     }
   }
+
+  @media screen and (max-width: 768px), print {
+    .menu-list,
+    div.social .row { text-align: center; }
+
+    .content ul { margin-left: 0; }
+  }
 `
 
 const Footer = class extends React.Component {
