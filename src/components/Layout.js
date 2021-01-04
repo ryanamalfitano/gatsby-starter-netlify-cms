@@ -49,7 +49,7 @@ const StyledLayout = styled.div`
     color: ${theme.black};
     background: ${theme.white};
 
-    .masthead #titles { background-image: url(/img/ABMSBT1.jpg); }
+    .masthead #titles { background-image: url(/img/backgrounds/ABMSBT1.jpg); }
 
     form input, form textarea {
       background: ${theme.silver};
@@ -61,7 +61,7 @@ const StyledLayout = styled.div`
     color: ${theme.white};
     background: ${theme.greyDark};
 
-    .masthead #titles { background-image: url(/img/17924.jpg); }
+    .masthead #titles { background-image: url(/img/backgrounds/17924.jpg); }
 
     form input, form textarea {
       background: ${theme.white};
@@ -111,24 +111,24 @@ const TemplateWrapper = ({ children, pageType }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix('/')}img/PBPLogo_White.png`}
+          href={`${withPrefix('/')}img/logos/PBPSLogoWhite.png`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/PBPLogo_White.png`}
+          href={`${withPrefix('/')}img/logos/PBPSLogoWhite.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/PBPLogo_White.png`}
+          href={`${withPrefix('/')}img/logos/PBPSLogoWhite.png`}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={`${withPrefix('/')}img/PBPLogo_White.png`}
+          href={`${withPrefix('/')}img/logos/PBPSLogoWhite.png`}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
@@ -138,7 +138,7 @@ const TemplateWrapper = ({ children, pageType }) => {
         <meta property="og:url" content="/" />
         <meta
           property="og:image"
-          content={`${withPrefix('/')}img/PBPLogo_White.png`}
+          content={`${withPrefix('/')}img/logos/PBPSLogoWhite.png`}
         />
       </Helmet>
       <ThemeButton onThemeChange={handleThemeChange} currentTheme={lightingIsDark} />

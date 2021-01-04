@@ -105,21 +105,21 @@ const Footer = class extends React.Component {
                   <a target="_blank" rel="noopener noreferrer"
                      title="discord" href="https://discord.com/invite/pixelbypixelstudios">
                     <img
-                      src="/img/icon-discord.webp"
+                      src="/img/social/icon-discord.webp"
                       alt="Discord"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="facebook" href="https://www.facebook.com/PixelbyPixelStudios">
                     <img
-                      src="/img/icon-facebook.webp"
+                      src="/img/social/icon-facebook.webp"
                       alt="Facebook"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="twitter" href="https://twitter.com/PixelbyPixelStu">
                     <img
-                      src="/img/icon-twitter.webp"
+                      src="/img/social/icon-twitter.webp"
                       alt="Twitter"
                     />
                   </a>
@@ -128,21 +128,21 @@ const Footer = class extends React.Component {
                   <a target="_blank" rel="noopener noreferrer"
                      title="youtube" href="https://www.youtube.com/c/PixelbyPixelStudios">
                     <img
-                      src="/img/icon-youtube.webp"
+                      src="/img/social/icon-youtube.webp"
                       alt="YouTube"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="instagram" href="https://www.instagram.com/pixelbypixelstu/">
                     <img
-                      src="/img/icon-instagram.webp"
+                      src="/img/social/icon-instagram.webp"
                       alt="Instagram"
                     />
                   </a>
                   <a target="_blank" rel="noopener noreferrer"
                      title="linkedin" href="https://www.linkedin.com/company/16232821">
                     <img
-                      src="/img/icon-linkedin.webp"
+                      src="/img/social/icon-linkedin.webp"
                       alt="LinkedIn"
                     />
                   </a>

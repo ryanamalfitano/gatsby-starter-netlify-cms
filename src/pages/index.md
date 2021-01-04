@@ -41,17 +41,17 @@ Home of Stream Interactive Gaming
 <div class="streamer column is-3">
 <h4>For Streamers</h4>
 <a href="https://store.steampowered.com/app/1170970/Marbles_on_Stream/" target="_blank" rel="noreferrer noopener">
-<img src="/img/steam_download_small.webp" alt="Download on Steam" />
+<img src="/img/interface/steam_download_small.webp" alt="Download on Steam" />
 </a>
 </div>
 
 <div class="viewer column is-4">
 <h4>For Viewers</h4>
 <a href="https://apps.apple.com/de/app/marbles-on-stream-mobile/id1443250176" target="_blank" rel="noreferrer noopener">
-<img src="/img/ios_download.webp" alt="Download on App Store" />
+<img src="/img/interface/ios_download.webp" alt="Download on App Store" />
 </a>
 <a href="https://play.google.com/store/apps/details?id=com.pixelbypixel.mosmobile" target="_blank" rel="noreferrer noopener">
-<img src="/img/google_play_download.webp" alt="Download on Google Play" />
+<img src="/img/interface/google_play_download.webp" alt="Download on Google Play" />
 </a>
 </div>
 
@@ -64,17 +64,17 @@ Home of Stream Interactive Gaming
 <div class="columns">
 
 <div class="column is-4">
-<img src="/img/home-main1.webp" alt="Provide a Fresh Experience for Viewers" />
+<img src="/img/interface/home-main1.webp" alt="Provide a Fresh Experience for Viewers" />
 <h4>Provide a Fresh Experience for Viewers</h4>
 </div>
 
 <div class="column is-4">
-<img src="/img/home-main2.webp" alt="Increase Audience Engagement" />
+<img src="/img/interface/home-main2.webp" alt="Increase Audience Engagement" />
 <h4>Increase Audience Engagement</h4>
 </div>
 
 <div class="column is-4">
-<img src="/img/home-main3.webp" alt="Be Part of an Awesome Community" />
+<img src="/img/interface/home-main3.webp" alt="Be Part of an Awesome Community" />
 <h4>Be Part of an Awesome Community</h4>
 </div>
 
