@@ -13,15 +13,26 @@ const StyledThemeButton = styled.button`
   background: none;
   cursor: pointer;
 
+  transition: 0.3s;
+
   z-index: 31;
 
   &.light {
     border: 1px solid ${props => props.theme.black};
+
+    :hover {
+      border: 1px solid ${props => props.theme.redPale};
+    }
   }
 
   &.dark {
     border: 1px solid ${props => props.theme.white};
+
+    :hover {
+      border: 1px solid ${props => props.theme.red};
+    }
   }
+
 `
 
 const ThemeButton = class extends React.Component {
