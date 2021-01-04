@@ -55,6 +55,8 @@ const StyledLayout = styled.div`
       background: ${theme.silver};
       ::placeholder { color: ${theme.greyPale}; }
     }
+
+    *.darkonly { display: none !important; }
   }
 
   &.dark {
@@ -67,6 +69,8 @@ const StyledLayout = styled.div`
       background: ${theme.white};
       ::placeholder { color: ${theme.greyPale}; }
     }
+
+    *.lightonly { display: none !important; }
   }
 `
 
