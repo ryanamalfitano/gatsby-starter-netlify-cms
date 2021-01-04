@@ -31,17 +31,25 @@ const StyledGameInfoSection = styled.section`
     padding: 20px 0;
     text-align: center;
 
-    > img { object-fit: contain; }
+    > img {
+      max-width: 50%;
+      object-fit: contain;
+    }
 
     h2, p {
       max-width: 25rem;
       margin: 15px auto;
     }
+  }
 
-    &:nth-of-type(even) {
+  @media screen and (max-width: 768px), print {
+    .selling-point {
+      display: block;
 
-
-      .companion-img { float: right; }
+      > img {
+        max-width: 100%;
+        margin: 15px 0;
+      }
     }
   }
 `
