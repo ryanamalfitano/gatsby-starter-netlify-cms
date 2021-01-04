@@ -30,9 +30,9 @@ Home of Stream Interactive Gaming
 
 <section class="mainPitch">
 
-<h1 class="title">Welcome to Our Site</h1>
+<h1 class="title">Our Mission</h1>
 
-<p>Some body copy goes here, exploring the studio's goals, values, etc. Probably should also mention Marbles by name as the current flagship product</p>
+<p>At Pixel By Pixel Studios, we strive for innovation. We create games that we love to play, and enjoy learning and growing with the community surrounding our projects.</p>
 
 </section>
 
