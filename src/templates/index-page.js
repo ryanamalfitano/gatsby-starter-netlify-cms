@@ -61,6 +61,8 @@ const StyledHomePageContent = styled.section`
         font-weight: normal;
       }
 
+      .column.is-4 { flex: none; width: 33%; }
+
       .streamer {
         text-align: right;
         box-shadow: inset -6px 6px 5px ${props => props.theme.purple};
@@ -68,6 +70,9 @@ const StyledHomePageContent = styled.section`
         border-right: 1px solid ${props => props.theme.black};
 
         h4 { color: ${props => props.theme.purple} !important; }
+
+        a:first-of-type img { margin-right: 20px; }
+        a:not(:first-of-type) img { margin-right: 5px; }
       }
 
       .viewer {
@@ -76,6 +81,9 @@ const StyledHomePageContent = styled.section`
         border-left: 1px solid ${props => props.theme.black};
 
         h4 { color: ${props => props.theme.red} !important; }
+
+        a:first-of-type img { margin-left: 20px; }
+        a:not(:first-of-type) img { margin-left: 5px; }
       }
     }
 
