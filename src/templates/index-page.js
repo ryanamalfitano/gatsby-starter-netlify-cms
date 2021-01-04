@@ -36,6 +36,10 @@ const StyledHomePageContent = styled.section`
       .embedVideo-container {
         text-align: center;
         background: black;
+
+        iframe {
+          width: 100%;
+        }
       }
     }
   }
@@ -90,6 +94,34 @@ const StyledHomePageContent = styled.section`
     .sellingPoints {
       margin: 100px auto 50px;
       text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1024px), print {
+    .masthead #stream .embedVideo-container iframe { height: 300px; }
+  }
+
+  @media screen and (max-width: 768px), print {
+    .masthead #titles {
+      padding: 50px 25px;
+      text-align: center;
+    }
+
+    .masthead #stream .embedVideo-container iframe { height: 250px; }
+
+    .downloads {
+      display: flex;
+
+      .column {
+        width: 50% !important;
+
+        a {
+          display: block;
+          margin: 10px 20px;
+
+          img { margin: 0 !important; }
+        }
+      }
     }
   }
 `
