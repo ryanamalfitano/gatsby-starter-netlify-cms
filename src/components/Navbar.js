@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import logo from '../../static/img/PBPLogo_White.webp'
-import logoRed from '../../static/img/PBPLogo_Red.webp'
+import logoBlk from '../../static/img/logos/PBPSLogoBlack.png'
+import logoWht from '../../static/img/logos/PBPSLogoWhite.png'
+import logoRed from '../../static/img/logos/PBPSLogoRed.png'
 import styled from 'styled-components'
 
 const StyledNavbar = styled.nav`
@@ -21,12 +22,11 @@ const StyledNavbar = styled.nav`
       &:hover { color: ${props => props.theme.red}; }
 
       &.logo img {
-        &.white { filter: invert(100%); }
         &.red { background: ${props => props.theme.white} !important; }
 
         :not(.is-active) { border-bottom: 2px solid ${props => props.theme.greyPale} !important; }
 
-        &.white.is-active { border-bottom: 2px solid ${props => props.theme.black} !important; }
+        &.lightonly.is-active { border-bottom: 2px solid ${props => props.theme.white} !important; }
         &.red.is-active { border-bottom: 2px solid ${props => props.theme.white} !important; }
       }
     }
@@ -70,7 +70,9 @@ const StyledNavbar = styled.nav`
 
           :hover { opacity: 0.0; }
 
-          &.white { z-index: 2; }
+          &.lightonly { background: ${props => props.theme.white}; }
+
+          &.lightonly, &.darkonly { z-index: 2; }
         }
       }
     }
@@ -110,7 +112,9 @@ const StyledNavbar = styled.nav`
 
           :hover { opacity: 0.0; }
 
-          &.white { z-index: 2; }
+          &.lightonly { background: ${props => props.theme.white}; }
+
+          &.lightonly, &.darkonly { z-index: 2; }
 
           :not(.is-active) { border-bottom: 2px solid ${props => props.theme.black}; }
         }
@@ -187,7 +191,8 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link className="navbar-item logo" title="Logo" to="/">
-              <img src={logo} className={`white ${this.state.navBarActiveClass}`}  alt="Pixel By Pixel Studios" />
+              <img src={logoBlk} className={`lightonly ${this.state.navBarActiveClass}`}  alt="Pixel By Pixel Studios" />
+              <img src={logoWht} className={`darkonly ${this.state.navBarActiveClass}`}  alt="Pixel By Pixel Studios" />
               <img src={logoRed} className={`red ${this.state.navBarActiveClass}`} alt="Pixel By Pixel Studios" />
             </Link>
             {/* Hamburger menu */}
@@ -214,7 +219,8 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/contact"> Contact </Link>
             </div>
             <Link className="navbar-item logo" title="Logo" to="/">
-              <img src={logo} className="white"  alt="Pixel By Pixel Studios" />
+              <img src={logoBlk} className="lightonly"  alt="Pixel By Pixel Studios" />
+              <img src={logoWht} className="darkonly"  alt="Pixel By Pixel Studios" />
               <img src={logoRed} className="red" alt="Pixel By Pixel Studios" />
             </Link>
             <div className="navbar-end">
