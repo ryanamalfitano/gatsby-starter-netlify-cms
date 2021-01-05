@@ -204,16 +204,17 @@ const TemplateWrapper = ({ children, pageType }) => {
   // Set lighting bool based on the theme lighting.
   var lightingIsDark;
 
-  // If we can find the 'lighting' cookie, set the lighting to the cookie value.
+  // If we can find the 'lighting' cookie, set the lighting
+  // to the cookie value and set the bool accordingly.
   if (typeof(cookies.lighting) !== "undefined") {
     if (theme.lighting !== cookies.lighting) {
       theme.lighting = cookies.lighting;
       lightingIsDark = false;
       if (theme.lighting === "dark") { lightingIsDark = true; }
-      console.log("Setting " + theme.lighting + " to " + cookies.lighting);
     }
   } else {
-    console.log("No lighting cookie!");
+    // If there is no lighting cookie, just proceed and set
+    // the lighting bool accordingly.
     lightingIsDark = false;
     if (theme.lighting === "dark") {
       lightingIsDark = true;
@@ -224,8 +225,11 @@ const TemplateWrapper = ({ children, pageType }) => {
   function handleThemeChange(val) {
     theme.lighting = val;
 
-    // Set theme cookie with no expiry.
-    setCookie("lighting", val, "/", "SameSite=Strict;");
+    // Set theme cookie with a 1-year expiry.
+    let maxage = 60*60*24*365;
+    let expiry = new Date();
+    expiry.setTime(expiry.getTime() + (1000*60*60*24*365));
+    setCookie("lighting", val, {path: "/", expires: expiry, maxAge: maxage, sameSite: "strict"});
   }
 
   return (
