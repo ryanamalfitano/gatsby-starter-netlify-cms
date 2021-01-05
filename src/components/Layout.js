@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { withPrefix } from 'gatsby'
 
-import cookie from 'cookie'
+import { CookiesProvider, useCookies } from 'react-cookie'
 import styled from 'styled-components'
 import { ThemeProvider } from 'styled-components'
 import useSiteMetadata from './SiteMetadata'
@@ -76,6 +76,7 @@ const StyledLayout = styled.div`
 
 const TemplateWrapper = ({ children, pageType }) => {
   const { title, description } = useSiteMetadata()
+  const [cookies, setCookie] = useCookies();
 
   // Set lighting bool based on the theme lighting.
   var lightingIsDark = false;
@@ -83,17 +84,14 @@ const TemplateWrapper = ({ children, pageType }) => {
     lightingIsDark = true;
   }
 
-  // Only do this if the document is loaded.
-  if (typeof(document) !== "undefined") {
-    // Grab cookies.
-    var cookies = cookie.parse(document.cookie);
+  // Grab cookies.
+  //var cookies = cookie.parse(document.cookie);
 
-    // If we can find the 'lighting' cookie, set the lighting to the cookie value.
-    if (typeof(cookies.lighting) !== "undefined") {
-      theme.lighting = cookies.lighting;
-      if (theme.lighting === "dark") { lightingIsDark = true; }
-                      else { lightingIsDark = false; }
-    }
+  // If we can find the 'lighting' cookie, set the lighting to the cookie value.
+  if (typeof(cookies.lighting) !== "undefined") {
+    theme.lighting = cookies.lighting;
+    if (theme.lighting === "dark") { lightingIsDark = true; }
+                    else { lightingIsDark = false; }
   }
 
   // Function to handle theme changes coming from ThemeButton.js.
@@ -101,8 +99,7 @@ const TemplateWrapper = ({ children, pageType }) => {
     theme.lighting = val;
 
     // Set theme cookie with no expiry.
-    document.cookie = "lighting=" + val + ";path=/;SameSite=Strict;";
-    window.location.reload();
+    setCookie("lighting", val, "/", "SameSite=Strict;");
   }
 
   return (
@@ -155,7 +152,9 @@ const TemplateWrapper = ({ children, pageType }) => {
 
 const WrappedWithThemeProvider = ({ children, pageType }) => (
   <ThemeProvider theme={theme}>
-    <TemplateWrapper children={children} pageType={pageType} />
+    <CookiesProvider>
+      <TemplateWrapper children={children} pageType={pageType} />
+    </CookiesProvider>
   </ThemeProvider>
 );
 
