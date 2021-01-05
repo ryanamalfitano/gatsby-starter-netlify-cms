@@ -202,19 +202,19 @@ const TemplateWrapper = ({ children, pageType }) => {
   const [cookies, setCookie] = useCookies();
 
   // Set lighting bool based on the theme lighting.
-  var lightingIsDark = false;
-  if (theme.lighting === "dark") {
-    lightingIsDark = true;
-  }
-
-  // Grab cookies.
-  //var cookies = cookie.parse(document.cookie);
+  var lightingIsDark;
 
   // If we can find the 'lighting' cookie, set the lighting to the cookie value.
   if (typeof(cookies.lighting) !== "undefined") {
     theme.lighting = cookies.lighting;
+    lightingIsDark = false;
     if (theme.lighting === "dark") { lightingIsDark = true; }
-                    else { lightingIsDark = false; }
+  } else {
+    console.log("No lighting cookie!");
+    lightingIsDark = false;
+    if (theme.lighting === "dark") {
+      lightingIsDark = true;
+    }
   }
 
   // Function to handle theme changes coming from ThemeButton.js.
