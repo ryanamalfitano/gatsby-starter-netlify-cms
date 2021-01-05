@@ -206,9 +206,12 @@ const TemplateWrapper = ({ children, pageType }) => {
 
   // If we can find the 'lighting' cookie, set the lighting to the cookie value.
   if (typeof(cookies.lighting) !== "undefined") {
-    theme.lighting = cookies.lighting;
-    lightingIsDark = false;
-    if (theme.lighting === "dark") { lightingIsDark = true; }
+    if (theme.lighting !== cookies.lighting) {
+      theme.lighting = cookies.lighting;
+      lightingIsDark = false;
+      if (theme.lighting === "dark") { lightingIsDark = true; }
+      console.log("Setting " + theme.lighting + " to " + cookies.lighting);
+    }
   } else {
     console.log("No lighting cookie!");
     lightingIsDark = false;
