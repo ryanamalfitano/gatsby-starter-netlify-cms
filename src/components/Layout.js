@@ -32,7 +32,7 @@ const theme = {
   fontHeading: 'Exo',
   fontSecondary: 'Signika',
 
-  lighting: 'light',
+  lighting: 'dark',
 };
 
 const StyledLayout = styled.div`
@@ -272,7 +272,7 @@ const TemplateWrapper = ({ children, pageType }) => {
           content={`${withPrefix('/')}img/logos/PBPSLogoWhite.png`}
         />
       </Helmet>
-      <ThemeButton onThemeChange={handleThemeChange} currentTheme={lightingIsDark} />
+      {/*<ThemeButton onThemeChange={handleThemeChange} currentTheme={lightingIsDark} />*/}
       <Navbar lighting={theme.lighting} />
       <div>{children}</div>
       <Footer lighting={theme.lighting} />
